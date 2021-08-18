@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31507.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceXAirlines.Server", "Server\SpaceXAirlines.Server.csproj", "{6089C4E8-EF76-4C07-A994-380894F75C0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceXAirlines.Client", "Client\SpaceXAirlines.Client.csproj", "{490B9FAB-C6D4-42AD-B998-324BB3D5E38E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceXAirlines.Shared", "Shared\SpaceXAirlines.Shared.csproj", "{228BDFAF-41EB-4372-9B16-F85DD361DACF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineSendAgent", "AirlineSendAgent\AirlineSendAgent.csproj", "{6177140D-FAA8-4311-A019-5575908C176D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6089C4E8-EF76-4C07-A994-380894F75C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6089C4E8-EF76-4C07-A994-380894F75C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6089C4E8-EF76-4C07-A994-380894F75C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6089C4E8-EF76-4C07-A994-380894F75C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490B9FAB-C6D4-42AD-B998-324BB3D5E38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490B9FAB-C6D4-42AD-B998-324BB3D5E38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490B9FAB-C6D4-42AD-B998-324BB3D5E38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490B9FAB-C6D4-42AD-B998-324BB3D5E38E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228BDFAF-41EB-4372-9B16-F85DD361DACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228BDFAF-41EB-4372-9B16-F85DD361DACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228BDFAF-41EB-4372-9B16-F85DD361DACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228BDFAF-41EB-4372-9B16-F85DD361DACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6177140D-FAA8-4311-A019-5575908C176D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6177140D-FAA8-4311-A019-5575908C176D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6177140D-FAA8-4311-A019-5575908C176D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6177140D-FAA8-4311-A019-5575908C176D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40D09A2F-57C2-493B-A0D9-1FD1186AEB56}
+	EndGlobalSection
+EndGlobal

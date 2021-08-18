@@ -1,0 +1,81 @@
+﻿@page "/"
+@using SpaceXAirlines.Shared.Dto
+@using SpaceXAirlines.Shared
+@using System.Xml.Schema
+@using Microsoft.Extensions.Configuration
+@using SpaceXAirlines.Shared.Helpers
+@inject HttpClient Http
+@inject IConfiguration configuration
+@inject NavigationManager UriHelper
+
+
+<Header></Header>
+
+<main>
+    <section class="py-2 text-center container ">
+        <VidLogo BodyText="@BodyText" TitleText="@TitleText" HeaderText="@HeaderText"></VidLogo>
+    </section>
+    
+
+    <div class="album py-2 ">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                <div class="col col-md-5 mx-auto">
+                    <div class="card shadow-sm">
+                        <img class="img-fluid" src="img/1.png" width="538" height="225">
+
+                        <div class="card-body">
+                            <p class="card-text">Step 1 - Register Webhook</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" @onclick="() => Navigate(webhookUri)" class="btn btn-sm btn-success">START</button>
+
+                                </div>
+                                <small class="text-muted">Blazor APP</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-5 mx-auto">
+                    <div class="card shadow-sm">
+                        <img class="img-fluid" src="img/2.png" width="538" height="225">
+
+                        <div class="card-body">
+                            <p class="card-text">Step 2 - Notification & Testing App</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                
+                                <small class="text-muted">.NET Core v5.0 | RabbitMq</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<Footer></Footer>
+
+@code {
+
+    string webhookUri = "https://localhost:9001/webhook";
+    string BodyText = "This webhook notification portal will provide you with up-to-date notifications of price changes on ticket prices as they occur. Register your webhook interest and URI location to receive these notifications in real time.";
+    string TitleText = "Welcome to the Airline Affiliate Notification Portal";
+    string HeaderText = "AIRLINE AFFILIATE NOTIFICATION PORTAL";
+
+    void Navigate(string uri)
+    {
+        UriHelper.NavigateTo(uri);
+    }
+
+}
+
+
+
+
+
+

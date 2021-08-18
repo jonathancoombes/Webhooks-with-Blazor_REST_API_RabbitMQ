@@ -1,0 +1,91 @@
+﻿@page "/WebhookTest"
+@using SpaceXAirlines.Shared.Dto
+@inject HttpClient Http;
+@inject NavigationManager UriHelper;
+
+<Header> </Header>
+
+@*Redirect without required data*@
+@if (String.IsNullOrEmpty(NotDto.FlightCode))
+{
+    UriHelper.NavigateTo("webhook");
+}
+
+<div class="container">
+
+    <div class="container-fluid col col-md-7 mx-auto">
+        <VidLogo BodyText="@BodyText" HeaderText="@HeaderText" TitleText="@TitleText"></VidLogo>
+    </div>
+    
+    @if (inProcessFlag)
+    {
+        submitShow = ConfigurationSettings.cssHide;
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+    <hr>
+    <EditForm Model="@NotDto" OnValidSubmit="await => PersistTrigger()">
+
+        <h4>1.Flight Data:</h4>
+        <p>Adjust the price and the trigger Flight Data Webhook</p>
+        <table class="table table-dark table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Flight Code</th>
+                <th scope="col">Ticket Price</th>
+                <th scope="col">Save Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>@NotDto.FlightCode</td>
+                <td>
+                    <InputNumber @bind-Value=@NotDto.OldPrice ParsingErrorMessage="Must be a decimal value" />
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger" style="@submitShow" type="submit">SAVE</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </EditForm>
+    <div class="text-success" style="@priceChange">
+        <p>The price for flight" @_dtoRead.FlightCode was successfully changed from the old price of <strong>Є @_dtoRead.OldPrice </strong> to new price of <strong> Є @_dtoPost.Price</strong>."</p>
+    </div>
+    <div id="alertError" class="alert alert-danger" style="@alertErrorDisplay">
+        <strong>Error Occurred! </strong><label id="dangerMessage">@errorMessage</label>
+    </div>
+    <hr>
+    <h4> 2.Webhook Process Flow:</h4>
+    <p>Monitor the data flow and processing events of the webhook delivery.</p>
+    <table class="table table-dark table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Step 1</th>
+                <th scope="col">Step 2</th>
+                <th scope="col">Step 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-light">
+                <th scope="row"><i class="card-img"></i></th>
+                <td class="table-success"><p>Price Updated</p><span class="@tick1"></span></td>
+                <td class="table-success"><p>Message Queued on Message Bus</p><i class="@tick2"></i></td>
+                <td class="table-success"><p>Webhook Delivered</p><i class="@tick3"></i></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</div>
+
+<Footer></Footer>
+
+@code {
+
+
+}
+

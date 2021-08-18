@@ -1,0 +1,71 @@
+﻿@page "/Webhook"
+@using SpaceXAirlines.Shared.Dto
+@using SpaceXAirlines.Shared
+@using System.Xml.Schema
+@using Microsoft.AspNetCore.Components
+@using Microsoft.Extensions.Configuration
+@inject HttpClient _http
+@inject IConfiguration configuration
+@inherits LayoutComponentBase
+
+<Header></Header>
+
+<div class="container">
+
+    <div class="container-fluid col col-md-7 mx-auto">
+        <VidLogo BodyText="@BodyText" HeaderText="@HeaderText" TitleText="@TitleText"></VidLogo>
+    </div>
+
+    <div id="registrationForm">
+
+        <EditForm Model="@_dtoPost" OnValidSubmit="RegisterWebhook">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="flight">1. Select the Flight</label>
+
+                <InputSelect class="form-control" @bind-Value="_dtoPost.FlightCode">
+                    <option value="" selected>Select the type...</option>
+                    @foreach (var fl in Flights)
+                    {
+                        <option class="text-success" value=@fl.FlightCode>@fl.FlightCode</option>
+                    }
+                </InputSelect>
+                <br />
+
+                <label for="webhook">2. Enter your valid Webhook URI</label>
+                <InputText class="form-control form-control-lg" id="webhookUri" @bind-Value="@_dtoPost.WebhookUri" placeholder="Enter URI" type="url" />
+                <small class="form-text text-muted">Webhooks are delivered to this URI in JSON as: {Secret|FlightNumber|OldPrice|NewPrice}</small>
+                <br /><br />
+                
+                <label for="webhook">3. Select the Webhook Type</label>
+                <InputSelect class="form-control" @bind-Value="@_dtoPost.WebhookType" disabled="@disabled">
+                    <option value="">Select webhook type ...</option>
+                    <option class="text-success" value="@ConfigurationSettings.PriceUpdates">Price Changes</option>
+                    <option disabled value="@ConfigurationSettings.DelayUpdates">Flight Delays (n/a)</option>
+                </InputSelect>
+                <br />
+
+                <div id="alertSuccess" class="alert alert-success" style="@alertSuccessDisplay">
+                    <strong>Success! </strong><label id="successMessage">@successMessage</label>
+                    <div id="testingButton" style="@testingButton">
+                        <br />
+                        <NavLink class="btn btn-success btn-lg" href="WebhookTest">
+                            <span class="oi oi-loop-square" aria-hidden="true"></span> Test Webhook
+                        </NavLink>
+                    </div>
+                </div>
+                @if (alertSuccessDisplay != ConfigurationSettings.cssShow && alertDangerDisplay != ConfigurationSettings.cssShow)
+                {
+                    <div style="@DisplayRegBtn">
+                        <button id="register" class="btn btn-lg btn-primary  btn-block" type="submit">Register</button>
+                    </div>
+                }
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+<Footer></Footer>
+<CascadingValue Name="dto" Value="@notifDto"></CascadingValue>

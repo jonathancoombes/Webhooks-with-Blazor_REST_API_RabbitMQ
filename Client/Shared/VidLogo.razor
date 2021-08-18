@@ -1,0 +1,35 @@
+﻿
+    <div class="row py-lg-4">
+        <div class="col-lg-7 mx-auto">
+            <div class="card shadow-sm" width="100%" height="225">
+                <h4 class=" font-monospace text-lg-center">@HeaderText</h4>
+                <video class="" playsinline autoplay muted loop poster="vid/back.jpg" id="bgvid">
+                    <source src="vid/vid.webm" type="video/webm">
+                    <source src="vid/vid.mp4" type="video/mp4">
+                </video>
+
+                <div class="card-body">
+                    <p class="text-lg-center text-dark card-text">@TitleText</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class=" text-muted text-md-start">
+                            @BodyText
+                        </small>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@code{
+
+    [Parameter]
+    public string BodyText { get; set; }
+
+    [Parameter]
+    public string HeaderText { get; set; }
+
+    [Parameter]
+    public string TitleText { get; set; }
+
+}

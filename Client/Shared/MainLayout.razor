@@ -1,0 +1,18 @@
+﻿@using SpaceXAirlines.Shared.Dto
+@inherits LayoutComponentBase
+
+<div class="page">
+<div class="main">       
+    <CascadingValue Name="dto" Value="notifDto">
+       
+            @Body
+        </CascadingValue>
+   
+
+</div>
+</div>
+
+@code
+{
+    public NotificationMessageDto notifDto { get; set; } = new();
+}
