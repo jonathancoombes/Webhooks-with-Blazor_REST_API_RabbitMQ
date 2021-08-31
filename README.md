@@ -31,3 +31,4 @@ The front end user interfaces are created using Blazor and connected to the .NET
 <p> Event driven webhook delivery application.</p>
  
  </ol>
+Note: Running this project requires a local instance of RabbitMQ on your machine. a Docker-compose file is also included in the project.
