@@ -2,7 +2,7 @@
 .NET Core Project implementing Webhooks using Blazor WASM | EF (MS SQL) | REST API | RabbitMq
 
 <div style="border:1px sold; padding:5px">
- <img src="http://jonathancoombes.com/back.JPG" alt="SpaceX" />
+ <img src="http://jonathancoombes.com/project.png" alt="SpaceX" />
  </div>
 
  <h4 class="text-white">Webhook and RabbitMQ REST API Demonstration</h4>
