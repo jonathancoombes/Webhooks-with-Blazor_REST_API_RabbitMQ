@@ -7,6 +7,7 @@ using AirlineSendAgent.Client;
 using AirlineSendAgent.Data;
 using AirlineSendAgent.Dtos;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -19,18 +20,26 @@ namespace AirlineSendAgent.App
     {
         private readonly SendAgentDbContext _context;
         private readonly IWebhookClient _webHookClient;
+        private readonly IConfiguration _config;
 
-        public AppHost(SendAgentDbContext context, IWebhookClient webhookClient)
+        public AppHost(SendAgentDbContext context, IWebhookClient webhookClient, IConfiguration config)
         {
             _context = context;
             _webHookClient = webhookClient;
+            _config = config;
         }
 
         // ! --> Create Connection
         
         public void Run()
         {
-            var factory = new ConnectionFactory(){ HostName = "localhost", Port = 5672};
+            var factory = new ConnectionFactory()
+            {
+                HostName = "coombes.eastus2.cloudapp.azure.com", 
+                UserName = _config["RabbitMqUserName"],
+                Password = _config["RabbitMqPassword"],
+                Port = 5672
+            };
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
