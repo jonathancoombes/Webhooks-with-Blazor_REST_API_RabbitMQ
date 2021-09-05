@@ -23,14 +23,15 @@ namespace AirlineSendAgent
                 .AddEnvironmentVariables()
                 .AddCommandLine(args);
 
+
+
             var config = builder.Build();
             
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>{
                   services.AddSingleton<IAppHost, AppHost>();
                   services.AddSingleton<IWebhookClient, WebhookClient>();
-                  services.AddDbContext<SendAgentDbContext>(opt => opt.UseSqlServer(config["AirlineConnection"]));                
-                    
+                  services.AddDbContext<SendAgentDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("AirlineConnection")));
                   services.AddHttpClient();
                 }).Build();
 
