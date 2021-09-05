@@ -16,7 +16,7 @@ change notifications made available by the publisher(Airline). Once a webhook is
 <p>
 .NET Core as the main back-end engine that will host the RESTFull API endpoints and deliver the event-driven information via a message broker application(RabbitMQ).
 Data will be persisted by a SQL server hosted on a Azure VM.
-The front end user interfaces are created using Blazor and connected to the .NET Core server application via a SignalR connection.
+The front end user interfaces are created using Blazor Wasm and hosted by a .NET Core server application.
 </p>
 <h4>This solution is based on 3 applications:</h4>
 <ol>
