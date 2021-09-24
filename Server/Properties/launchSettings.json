@@ -12,7 +12,9 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "AirlineConnection": "Value",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RabbitUrl": "Value"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:9000",
