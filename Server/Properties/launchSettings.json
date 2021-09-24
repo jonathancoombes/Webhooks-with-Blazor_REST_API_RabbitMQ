@@ -12,10 +12,9 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "AirlineConnection": "Value",
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "RabbitUrl": "Value"
-      },
+        "RabbitUrl": "",
+        "AirlineConnection": "" },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:9000",
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}"
