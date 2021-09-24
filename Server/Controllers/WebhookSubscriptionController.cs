@@ -14,6 +14,8 @@ namespace SpaceXAirlines.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    
+
     public class WebhookSubscriptionController: ControllerBase
     {
         private readonly AirlineDbContext _context;

@@ -21,6 +21,7 @@ namespace AirlineSendAgent.App
         private readonly SendAgentDbContext _context;
         private readonly IWebhookClient _webHookClient;
         private readonly IConfiguration _config;
+        string _url = "amqps://pwyalywp:0r1MyUhVkp9g2Ix7RRS0w7XXSos4eVKm@turkey.rmq.cloudamqp.com/pwyalywp";
 
         public AppHost(SendAgentDbContext context, IWebhookClient webhookClient, IConfiguration config)
         {
@@ -35,10 +36,10 @@ namespace AirlineSendAgent.App
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "coombes.eastus2.cloudapp.azure.com", 
-                UserName = _config["RabbitMqUserName"],
-                Password = _config["RabbitMqPassword"],
-                Port = 5672
+                //HostName = "localhost",                 
+                Uri = new Uri(_url)
+
+                // Port = 5672
             };
 
             using (var connection = factory.CreateConnection())

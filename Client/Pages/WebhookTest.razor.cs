@@ -44,6 +44,7 @@ namespace SpaceXAirlines.Client.Pages
 
 
     //Price Update and Webhook Trigger
+    
     async Task PersistTrigger()
     {
         if (NotDto.OldPrice != Price && _dtoRead.OldPrice != Price)

@@ -13,6 +13,7 @@ using SpaceXAirlines.Server;
 using SpaceXAirlines.Server.Data;
 using SpaceXAirlines.Server.MessageBus;
 using SpaceXAirlines.Server.Models;
+using SpaceXAirlines.Server.Repository;
 using SpaceXAirlines.Shared.Helpers;
 
 namespace SpaceXAirlines.Server
@@ -33,12 +34,11 @@ namespace SpaceXAirlines.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddCors(); 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-           // services.AddSingleton<IAzureStateService, AzureStateService>();
-
-           services.AddSingleton<IHelpers, Helpers>();
+            services.AddScoped<IFlightRepository, FlightRepository>();
+            services.AddSingleton<IHelpers, Helpers>();
             services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddDbContext<AirlineDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("AirlineConnection")));
@@ -60,9 +60,9 @@ namespace SpaceXAirlines.Server
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-           
-            app.UseHttpsRedirection();
+            app.UseCors(
+                options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 

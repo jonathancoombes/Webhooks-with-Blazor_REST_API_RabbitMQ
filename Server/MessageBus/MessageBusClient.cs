@@ -14,6 +14,7 @@ namespace SpaceXAirlines.Server.MessageBus
     {
         private readonly IConfiguration _config;
         // -> Implementing RabbitMq (Placing Message on Queue)
+        string _url = "amqps://pwyalywp:0r1MyUhVkp9g2Ix7RRS0w7XXSos4eVKm@turkey.rmq.cloudamqp.com/pwyalywp";
 
         public MessageBusClient(IConfiguration config)
         {
@@ -23,10 +24,10 @@ namespace SpaceXAirlines.Server.MessageBus
         public void SendMessage(NotificationMessageDto notificationMessageDto)
         {
             var factory = new ConnectionFactory()
-            {
-                HostName = "coombes.eastus2.cloudapp.azure.com", 
-                UserName = _config["RabbitMqUserName"],
-                Password = _config["RabbitMqPassword"],
+            { 
+                //HostName = "localhost"
+                Uri = new Uri(_url)
+
             };
 
             using (var connection = factory.CreateConnection())

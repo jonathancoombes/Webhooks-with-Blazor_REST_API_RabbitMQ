@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>bae1e883-b229-42d7-ab5e-c5330462a2d1</UserSecretsId>
@@ -23,5 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\SpaceXAirlines.Client.csproj" />
     <ProjectReference Include="..\Shared\SpaceXAirlines.Shared.csproj" />
+
   </ItemGroup>
 </Project>
