@@ -3,8 +3,8 @@
 
 <div style="border:1px sold; padding:5px">
  <a href="http://coombes.eastus2.cloudapp.azure.com/" >Click here or on the image to view a hosted instance of this project on Azure VM.<br><br>
-  <img src="http://jonathancoombes.com/project.png" alt="SpaceX" /></a>
- </div>
+  <img src="http://jonathancoombes.com/project.png" alt="SpaceX" /></a> 
+ </div> 
 
  <h3 class="text-white">Webhook and RabbitMQ REST API Demonstration</h3>
  <p class="">Welcome to the .NET demonstration project.</p>
