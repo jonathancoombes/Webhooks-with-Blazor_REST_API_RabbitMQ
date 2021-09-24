@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'SpaceXWebhook'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3E5DBF1F80F413F98D2E9BF081DD35F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E391BB51D3824D47ADE67B3080604AAF }}
           package: .
