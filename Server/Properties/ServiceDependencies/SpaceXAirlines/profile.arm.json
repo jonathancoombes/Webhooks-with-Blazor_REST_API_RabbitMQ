@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "SpaceXWebhook",
+      "defaultValue": "SpaceXAirlines",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
