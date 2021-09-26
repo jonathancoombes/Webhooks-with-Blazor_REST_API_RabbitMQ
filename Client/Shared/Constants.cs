@@ -10,8 +10,8 @@ namespace SpaceXAirlines.Client.Shared
    public static class ConfigurationSettings
    { 
        // Prod
-       public static readonly string PostUrl = "httpS://spacexairlines.azurewebsites.net/api/WebhookSubscription";
-      public static readonly string PriceUpdateUrl = "httpS://spacexairlines.azurewebsites.net/api/Flight";
+       public static readonly string PostUrl = "https://spacexairlines.azurewebsites.net/api/WebhookSubscription";
+      public static readonly string PriceUpdateUrl = "https://spacexairlines.azurewebsites.net/api/Flight";
        
        //Dev
        //public static readonly string PostUrl = "api/WebhookSubscription";
