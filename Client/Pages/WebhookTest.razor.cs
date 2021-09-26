@@ -40,7 +40,7 @@ namespace SpaceXAirlines.Client.Pages
 
     string HeaderText = "TESTING FLIGHT DATA WEBHOOK";
     string TitleText = "Welcome to the Webhook Testing Page";
-    string BodyText = "Trigger the desired flight price change and view the results delivered to the designated URI below";
+    string BodyText = "Trigger the desired flight price change and view the results delivered to the designated URI below.";
 
 
     //Price Update and Webhook Trigger
