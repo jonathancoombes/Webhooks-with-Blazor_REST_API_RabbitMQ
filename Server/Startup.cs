@@ -65,7 +65,7 @@ namespace SpaceXAirlines.Server
             );
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
-
+           // app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseAuthentication();

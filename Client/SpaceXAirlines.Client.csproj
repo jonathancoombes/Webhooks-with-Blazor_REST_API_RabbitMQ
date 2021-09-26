@@ -5,9 +5,18 @@
     <UserSecretsId>4a051873-1961-4c08-b401-521a268f3716</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
   <ItemGroup>
 <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.8" />
 <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.8" PrivateAssets="all" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+</PackageReference>
   </ItemGroup>
 
   <ItemGroup>

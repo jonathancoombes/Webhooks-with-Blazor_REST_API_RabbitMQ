@@ -26,7 +26,7 @@ namespace SpaceXAirlines.Client.Pages
         public NotificationMessageDto notifDto { get; set; } = new();
         
         protected override async Task OnInitializedAsync() =>
-        Flights = await _http.GetFromJsonAsync<List<FlightDetailReadDto>>("api/Flight");
+        Flights = await _http.GetFromJsonAsync<List<FlightDetailReadDto>>("https://spacexairlines.azurewebsites.net/api/Flight");
 
         string BodyText = "Select the flight and enter your URI below to receive instant notifications when changes occur in our flight data";
         string TitleText = "Welcome to the Webhook Registration Page";
