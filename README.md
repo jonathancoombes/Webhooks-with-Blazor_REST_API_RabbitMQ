@@ -1,7 +1,7 @@
 # Webhooks-with-Blazor_REST_API_RabbitMQ
 .NET Core Project implementing Webhooks using Blazor | EF (MS SQL) | REST API | RabbitMq
 
- <a href="http://coombes.eastus2.cloudapp.azure.com/" >Click here or on the image to view a hosted instance of this project on Azure VM.</a><br><br>
+ <a href="http://coombes.eastus2.cloudapp.azure.com/" >Click here to view a hosted instance of this project on Azure VM.</a><br><br>
   <img src="https://github.com/jonathancoombes/Webhooks-with-Blazor_REST_API_RabbitMQ/blob/master/project.png" alt="SpaceX" /></a> 
 
  <h3 class="text-white">Webhook and RabbitMQ REST API Demonstration</h3>
